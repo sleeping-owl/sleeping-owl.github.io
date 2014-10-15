@@ -71,6 +71,7 @@
 {
     $this-&gt;categories()-&gt;detach();
     if ( ! $categories) return;
+    if ( ! $this-&gt;exists) $this-&gt;save();
 
     $this-&gt;categories()-&gt;attach($categories);
 }</code></pre>
