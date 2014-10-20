@@ -52,17 +52,22 @@
                                     <h1>Validation                                                                            </h1>
                                 </div>
                             
-                            <p>The easiest way to perform validation in you models is to extend <code>SleepingOwl\Models\SleepingOwlModel</code>. You must implement <code>getValidationRules()</code> method in your model, that must return validation rules, and thats all.</p>
+                            <p>There is two easy ways to perform validation in your models, you can combine them if you want. And there is one hard way. First of all you must extend your models from <code>SleepingOwl\Models\SleepingOwlModel</code>.</p>
+<h2>Easy Ways</h2>
+<h3>1. In Form Elements</h3>
+<p>You can add validation rules to your form elements:</p>
+<pre><code class="language-php">FormItem::text('title')-&gt;required()-&gt;unique()-&gt;validationRule('my-custom-rule')</code></pre>
+<p><code>required()</code> accepts one parameter: <code>true</code> if required only on create, <code>false</code> if always required. No parameter equals <code>false</code>.</p>
+<p>Use <code>unique()</code> to set this field to be unique in this model.</p>
+<p>You can use <code>validationRule($rule)</code> to add any rule you want. You can use pipe delimiter <code>|</code>.</p>
+<h3>2. In Your Model</h3>
+<p>You can implement <code>public function getValidationRules()</code> method in your model, that must return validation rules, and thats all.</p>
+<h2>Hard Way</h2>
 <p>The other way is to implement <code>SleepingOwl\Models\Interfaces\ValidationModelInterface</code> interface. It declares 2 methods: <code>validate($data)</code> and <code>getValidationRules()</code>. You must manually write validation there. If validation fails method must throw <code>SleepingOwl\Admin\Exceptions\ValidationException</code>.</p>
-<h3>New Validation Rules</h3>
+<h2>New Validation Rules</h2>
 <ul>
 <li><code>url_stub</code> &ndash; check if field is valid url stub (without slashes)</li>
 <li><code>url_stub_full</code> &ndash; check if field is valid url stub (with slashes)</li>
-<li><code>required_only_on_create</code> &ndash; field required only on new entity creation, usefull for image field</li>
-</ul>
-<h3>Updated Validation Rules</h3>
-<ul>
-<li><code>unique</code> &ndash; same as laravel 'unique', but automatically exclude current entity from search. <em>(works only if your model extends <code>SleepingOwlModel</code>)</em></li>
 </ul>                        </article>
                     </div>
                 </div>
