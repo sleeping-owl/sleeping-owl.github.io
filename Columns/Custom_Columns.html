@@ -54,11 +54,11 @@
                             
                             <p>You can register your own column types in <code>bootstrap.php</code> file within <code>bootstrapDirectory</code> (<em>default is <code>app/admin/bootstrap.php</code></em>).</p>
 <pre><code class="language-php">Column::register('{type}', \Foo\Bar\MyColumn::class)</code></pre>
-<p>Your class must implement <code>SleepingOwl\Admin\Columns\Interfaces\ColumnInterface</code>.</p>
+<p>Your class must implement <code>SleepingOwl\Admin\Columns\Interfaces\ColumnInterface</code> or extend <code>SleepingOwl\Admin\Columns\Column\BaseColumn</code> class.</p>
 <h3>Example</h3>
 <p>bootstrap.php</p>
 <pre><code class="language-php">Column::register('yesNo', \Acme\YesNoColumn::class)</code></pre>
-<p>Acme/YesNoColumn.php</p>
+<h4>1. Acme/YesNoColumn.php using interface implementation</h4>
 <pre><code class="language-php">use SleepingOwl\Admin\Columns\Interfaces\ColumnInterface;
 
 class YesNoColumn implements ColumnInterface
@@ -73,6 +73,11 @@ class YesNoColumn implements ColumnInterface
     {
         $content = ($instance-&gt;bool) ? 'yes' : 'no';
         return '&lt;td&gt;' . $content . '&lt;/td&gt;';
+    }
+
+    public function getName()
+    {
+        return 'columng-name';
     }
 
     public function isHidden()
@@ -91,6 +96,24 @@ class YesNoColumn implements ColumnInterface
 <pre><code class="language-php">-&gt;columns(function ()
 {
     Column::yesNo()-&gt;myCustomMethod();
+})</code></pre>
+<h4>2. Acme/YesNoColumn.php using BaseColumn extend</h4>
+<pre><code class="language-php">use SleepingOwl\Admin\Columns\Column\BaseColumn;
+
+class YesNoColumn extends BaseColumn
+{
+
+    public function render($instance, $totalCount)
+    {
+        $content = ($instance-&gt;{$this-&gt;name}) ? 'yes' : 'no';
+        return parent::render($instance, $totalCount, $content);
+    }
+
+}</code></pre>
+<p>Usage in model configuration</p>
+<pre><code class="language-php">-&gt;columns(function ()
+{
+    Column::yesNo('bool', 'Label')-&gt;sortable(false);
 })</code></pre>                        </article>
                     </div>
                 </div>
