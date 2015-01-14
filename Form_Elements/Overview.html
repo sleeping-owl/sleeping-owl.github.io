@@ -73,6 +73,9 @@
 <h3>Validation</h3>
 <pre><code class="language-php">FormItem::text('title')-&gt;required()-&gt;unique()-&gt;validationRule('my-custom-rule')</code></pre>
 <p>See <a href="../Getting_Started/Validation.html">details</a> about validation.</p>
+<h3>Custom HTML attributes</h3>
+<p>You can add custom html attributes to the form element.</p>
+<pre><code class="language-php">FormItem::text('title')-&gt;attributes(['class' =&gt; 'my-class', 'my-attribute' =&gt; 1])</code></pre>
 <h3>Register Custom Type</h3>
 <p>See <a href="Custom_Form_Elements.html">custom form elements</a>.</p>                        </article>
                     </div>
