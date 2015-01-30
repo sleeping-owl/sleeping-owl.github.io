@@ -73,12 +73,27 @@ class Document extends \Eloquent implements ModelWithFileFieldsInterface
     {
         return [
             'file' =&gt; 'documents/',
+            'other' =&gt; ['other_files/', function($directory, $originalName, $extension)
+            {
+                return $originalName;
+            }]
         ];
     }
 }</code></pre>
 <h3>Provide File Fields</h3>
 <p><code>getFileFields()</code> must return array, where keys is model file fields and values is path to directory within <code>filesDirectory</code> (<em>see <a href="../Getting_Started/Configuration.html">configuration</a></em>).</p>
 <p>If path is empty files will be stored in <code>filesDirectory</code>.</p>
+<h3>Custom File Naming Function</h3>
+<p>Array value can be either string or array:</p>
+<ul>
+<li><code>string</code> &mdash; directory to upload files to, filename generates randomly.</li>
+<li><code>array</code> &mdash; first item in array is directory to upload files to, second item is naming function closure (<code>function($directory, $originalName, $extension){}</code>). Closure must return new filename for the uploaded file.
+<ul>
+<li><code>$directory</code> &mdash; absolute path to the upload directory</li>
+<li><code>$originalName</code> &mdash; uploaded file original name</li>
+<li><code>$extension</code> &mdash; uploaded file extension</li>
+</ul></li>
+</ul>
 <h3>Field Usage</h3>
 <p>Accessing fields of your model</p>
 <pre><code class="language-php">$document-&gt;file</code></pre>

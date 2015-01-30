@@ -73,13 +73,28 @@ class Monument extends \Eloquent implements ModelWithImageFieldsInterface
     {
         return [
             'image' =&gt; 'monuments/',
-            'photo' =&gt; ''
+            'photo' =&gt; '',
+            'other' =&gt; ['other_images/', function($directory, $originalName, $extension)
+            {
+                return $originalName;
+            }]
         ];
     }
 }</code></pre>
 <h3>Указание полей с изображениями</h3>
 <p><code>getImageFields()</code> должен возвращать массив, ключи которого &mdash; название полей с изображениями, а значения &mdash; пути к директории, где будут храниться изображения, относительно <code>imagesDirectory</code> (<em>смотрите <a href="../Getting_Started/Configuration.html">конфигурация</a></em>).</p>
 <p>Если путь пуст, изображения будут храниться в <code>imagesDirectory</code>.</p>
+<h3>Произвольная функция именования файлов</h3>
+<p>Значения в массиве могут быть типа string или array:</p>
+<ul>
+<li><code>string</code> &mdash; директория для загрузки изображений, имя файла будет сгенерировано случайно.</li>
+<li><code>array</code> &mdash; первый элемент массива будет директорией для загрузки изображений, второй элемент должен быть функцией, возвращающей название файла (<code>function($directory, $originalName, $extension){}</code>).
+<ul>
+<li><code>$directory</code> &mdash; абсолютный путь к директории загрузки</li>
+<li><code>$originalName</code> &mdash; исходное название загруженного файла</li>
+<li><code>$extension</code> &mdash; расширение загруженого файла</li>
+</ul></li>
+</ul>
 <h3>Использование поля с изображением</h3>
 <p>Доступ к полю вашей модели</p>
 <pre><code class="language-php">$monument-&gt;image</code></pre>

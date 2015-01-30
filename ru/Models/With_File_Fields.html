@@ -73,12 +73,27 @@ class Document extends \Eloquent implements ModelWithFileFieldsInterface
     {
         return [
             'file' =&gt; 'documents/',
+            'other' =&gt; ['other_files/', function($directory, $originalName, $extension)
+            {
+                return $originalName;
+            }]
         ];
     }
 }</code></pre>
 <h3>Указание полей с файлами</h3>
 <p><code>getFileFields()</code> должен возвращать массив, ключи которого &mdash; название полей с файлами, а значения &mdash; пути к директории, где будут храниться файлы, относительно <code>filesDirectory</code> (<em>смотрите <a href="../Getting_Started/Configuration.html">конфигурация</a></em>).</p>
 <p>Если путь пуст, файлы будут храниться в <code>filesDirectory</code>.</p>
+<h3>Произвольная функция именования файлов</h3>
+<p>Значения в массиве могут быть типа string или array:</p>
+<ul>
+<li><code>string</code> &mdash; директория для загрузки файлов, имя файла будет сгенерировано случайно.</li>
+<li><code>array</code> &mdash; первый элемент массива будет директорией для загрузки файлов, второй элемент должен быть функцией, возвращающей название файла (<code>function($directory, $originalName, $extension){}</code>).
+<ul>
+<li><code>$directory</code> &mdash; абсолютный путь к директории загрузки</li>
+<li><code>$originalName</code> &mdash; исходное название загруженного файла</li>
+<li><code>$extension</code> &mdash; расширение загруженого файла</li>
+</ul></li>
+</ul>
 <h3>Использование поля с изображением</h3>
 <p>Доступ к полю вашей модели</p>
 <pre><code class="language-php">$document-&gt;file</code></pre>
