@@ -55,21 +55,25 @@
                             
                             <ol>
 <li>
-<p>Require this package in your composer.json and run composer update (or run <code>composer require sleeping-owl/admin:1.x</code> directly):</p>
-<pre><code class="language-json">"sleeping-owl/admin": "1.*"</code></pre>
+<p>Require this package in your composer.json and run composer update (or run <code>composer require sleeping-owl/admin:2.x</code> directly):</p>
+<pre><code class="language-json">"sleeping-owl/admin": "2.*"</code></pre>
 </li>
 <li>
-<p>After composer update, add service providers to the <code>app/config/app.php</code></p>
-<pre><code>'SleepingOwl\Admin\AdminServiceProvider',</code></pre>
+<p>After composer update, add service providers to the <code>config/app.php</code></p>
+<pre><code>'SleepingOwl\Admin\AdminServiceProvider',
+'Illuminate\Html\HtmlServiceProvider',</code></pre>
 </li>
 <li>
-<p>Add this to the facades in <code>app/config/app.php</code>:</p>
+<p>Add this to the facades in <code>config/app.php</code>:</p>
 <pre><code>'Admin'                =&gt; 'SleepingOwl\Admin\Admin',
 'AdminAuth'            =&gt; 'SleepingOwl\AdminAuth\Facades\AdminAuth',
 'AssetManager'         =&gt; 'SleepingOwl\Admin\AssetManager\AssetManager',
 'Column'               =&gt; 'SleepingOwl\Admin\Columns\Column',
 'FormItem'             =&gt; 'SleepingOwl\Admin\Models\Form\FormItem',
-'ModelItem'            =&gt; 'SleepingOwl\Admin\Models\ModelItem',</code></pre>
+'ModelItem'            =&gt; 'SleepingOwl\Admin\Models\ModelItem',
+
+'Form'      =&gt; 'Illuminate\Html\FormFacade',
+'Html'      =&gt; 'Illuminate\Html\HtmlFacade',</code></pre>
 </li>
 <li>
 <p>Run this command in terminal (if you want to know what exactly this command makes, see <a href="../Commands/Install.html">install command documentation</a>):</p>

@@ -56,12 +56,12 @@
                             <p>Конфигурация моделей SleepingOwl Admin должны быть расположены в директории <code>bootstrapDirectory</code> (<em>по умолчанию: <code>app/admin</code></em>).</p>
 <p>Вы можете хранить конфигурацию моделей в одном файле или разделить на несколько по желанию.</p>
 <p>Ниже приведен пример того, как может выглядеть конфигурация модели:</p>
-<pre><code class="language-php">Admin::model(\District::class)
+<pre><code class="language-php">Admin::model(\App\District::class)
     -&gt;title('City Districts')
     -&gt;with('streets', 'schools', 'city')
     -&gt;filters(function ()
 {
-    ModelItem::filter('city_id')-&gt;title()-&gt;from(\City:class);
+    ModelItem::filter('city_id')-&gt;title()-&gt;from(\App\City:class);
 })
     -&gt;columns(function ()
 {
@@ -70,7 +70,7 @@
         -&gt;append(Column::filter('city_id')-&gt;value('city.id'));
     Column::string('stub', 'Url stub');
     Column::count('streets', 'Streets')
-        -&gt;append(Column::filter('district_id')-&gt;model(\Street::class));
+        -&gt;append(Column::filter('district_id')-&gt;model(\App\Street::class));
 })
     -&gt;form(function ()
 {

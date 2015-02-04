@@ -55,8 +55,8 @@
                             
                             <p>Конфигурация меню SleepingOwl Admin по умолчанию располагается в <code>app/admin/menu.php</code>.</p>
 <p>Вот простой пример как может выглядеть конфигурация меню:</p>
-<pre><code>Admin::menu()-&gt;url('/')-&gt;label('Start Page')-&gt;icon('fa-dashboard')-&gt;uses('\AdminController@getIndex');
-Admin::menu(\User::class)-&gt;icon('fa-user');
+<pre><code>Admin::menu()-&gt;url('/')-&gt;label('Start Page')-&gt;icon('fa-dashboard')-&gt;uses('\App\HTTP\Controllers\AdminController@getIndex');
+Admin::menu(\App\User::class)-&gt;icon('fa-user');
 Admin::menu()-&gt;label('Subitems')-&gt;icon('fa-book')-&gt;items(function ()
 {
     Admin::menu(\Acme\Models\Bar\User::class)-&gt;icon('fa-user');
@@ -70,7 +70,7 @@ Admin::menu()-&gt;label('Subitems')-&gt;icon('fa-book')-&gt;items(function ()
 <p>Заголовок элемента меню будет взят из заголовка модели, но вы можете установить свой заголовок используя метод <code>label()</code>.</p>
 <p>Адрес элемента меню будет ссылкой на указанную модель.</p>
 <h3>Создание элемента меню для действия контроллера</h3>
-<pre><code class="language-php">Admin::menu()-&gt;url('my-url')-&gt;uses('\MyController@getAction')</code></pre>
+<pre><code class="language-php">Admin::menu()-&gt;url('my-url')-&gt;uses('\App\HTTP\Controllers\MyController@getAction')</code></pre>
 <p>Вы должны указать адрес для данного элемента используя <code>url()</code> и указать действие контроллера используя <code>uses()</code>.</p>
 <h3>Заголовок элемента меню</h3>
 <pre><code class="language-php">-&gt;label('My Label')</code></pre>

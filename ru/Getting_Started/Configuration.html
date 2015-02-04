@@ -54,7 +54,7 @@
                                 </div>
                             
                             <p><a href="../Commands/Install.html">Команда install</a> публикует конфиг SleepingOwl Admin автоматически. Если вы хотите опубликовать конфиг вручную выполните эту команду:</p>
-<pre><code class="language-bash">$ php artisan config:publish sleeping-owl/admin</code></pre>
+<pre><code class="language-bash">$ php artisan vendor:publish --provider="SleepingOwl\Admin\AdminServiceProvider" --tag="config"</code></pre>
 <h2>Параметры конфигурации</h2>
 <h3>title</h3>
 <p>Строка для отображения в заголовке.</p>

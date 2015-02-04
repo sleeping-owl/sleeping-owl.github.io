@@ -54,7 +54,7 @@
                                 </div>
                             
                             <p><a href="../Commands/Install.html">Install command</a> publishes SleepingOwl Admin config automatically. If you want to publish config manually you must run this command in terminal:</p>
-<pre><code class="language-bash">$ php artisan config:publish sleeping-owl/admin</code></pre>
+<pre><code class="language-bash">$ php artisan vendor:publish --provider="SleepingOwl\Admin\AdminServiceProvider" --tag="config"</code></pre>
 <h2>Config Attributes</h2>
 <h3>title</h3>
 <p>String to display in page title and header.</p>

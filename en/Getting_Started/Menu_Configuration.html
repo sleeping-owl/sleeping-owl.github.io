@@ -55,8 +55,8 @@
                             
                             <p>SleepingOwl Admin menu configuration default placement is in <code>app/admin/menu.php</code>.</p>
 <p>Here is simple example how your menu configuration might look like:</p>
-<pre><code>Admin::menu()-&gt;url('/')-&gt;label('Start Page')-&gt;icon('fa-dashboard')-&gt;uses('\AdminController@getIndex');
-Admin::menu(\User::class)-&gt;icon('fa-user');
+<pre><code>Admin::menu()-&gt;url('/')-&gt;label('Start Page')-&gt;icon('fa-dashboard')-&gt;uses('\App\HTTP\Controllers\AdminController@getIndex');
+Admin::menu(\App\User::class)-&gt;icon('fa-user');
 Admin::menu()-&gt;label('Subitems')-&gt;icon('fa-book')-&gt;items(function ()
 {
     Admin::menu(\Acme\Models\Bar\User::class)-&gt;icon('fa-user');
@@ -70,7 +70,7 @@ Admin::menu()-&gt;label('Subitems')-&gt;icon('fa-book')-&gt;items(function ()
 <p>Label for this menu item will be model title, but you can provide custom label using <code>label()</code> method.</p>
 <p>Url for this item will be a link to the model.</p>
 <h3>Create Menu Item for Custom Controller Action</h3>
-<pre><code class="language-php">Admin::menu()-&gt;url('my-url')-&gt;uses('\MyController@getAction')</code></pre>
+<pre><code class="language-php">Admin::menu()-&gt;url('my-url')-&gt;uses('\App\HTTP\Controllers\MyController@getAction')</code></pre>
 <p>You must provide url for this item using <code>url()</code> and controller action using <code>uses()</code>.</p>
 <h3>Set Label</h3>
 <pre><code class="language-php">-&gt;label('My Label')</code></pre>

@@ -56,12 +56,12 @@
                             <p>SleepingOwl Admin model configurations must be stored within <code>bootstrapDirectory</code> (<em>default: <code>app/admin</code></em>).</p>
 <p>You can store all your model configurations in one file or split it as you want.</p>
 <p>Here is example how your model configuration might look like:</p>
-<pre><code class="language-php">Admin::model(\District::class)
+<pre><code class="language-php">Admin::model(\App\District::class)
     -&gt;title('City Districts')
     -&gt;with('streets', 'schools', 'city')
     -&gt;filters(function ()
 {
-    ModelItem::filter('city_id')-&gt;title()-&gt;from(\City:class);
+    ModelItem::filter('city_id')-&gt;title()-&gt;from(\App\City:class);
 })
     -&gt;columns(function ()
 {
@@ -70,7 +70,7 @@
         -&gt;append(Column::filter('city_id')-&gt;value('city.id'));
     Column::string('stub', 'Url stub');
     Column::count('streets', 'Streets')
-        -&gt;append(Column::filter('district_id')-&gt;model(\Street::class));
+        -&gt;append(Column::filter('district_id')-&gt;model(\App\Street::class));
 })
     -&gt;form(function ()
 {
