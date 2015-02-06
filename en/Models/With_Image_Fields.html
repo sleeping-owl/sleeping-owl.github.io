@@ -95,6 +95,18 @@ class Monument extends \Eloquent implements ModelWithImageFieldsInterface
 <li><code>$extension</code> &mdash; uploaded file extension</li>
 </ul></li>
 </ul>
+<h3>Image Cropping and Resizing</h3>
+<p>You can change uploaded image by adding method <code>setImage($field, $image)</code> to your model:</p>
+<pre><code class="language-php">public function setImage($field, $image)
+{
+    parent::setImage($field, $image);
+    $file = $this-&gt;$field;
+    if ( ! $file-&gt;exists()) return;
+    $path = $file-&gt;getFullPath();
+
+    // you can use Intervention Image package features to change uploaded image
+    Image::make($path)-&gt;resize(10, 10)-&gt;save();
+}</code></pre>
 <h3>Field Usage</h3>
 <p>Accessing fields of your model</p>
 <pre><code class="language-php">$monument-&gt;image</code></pre>

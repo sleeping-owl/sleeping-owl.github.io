@@ -95,6 +95,18 @@ class Monument extends \Eloquent implements ModelWithImageFieldsInterface
 <li><code>$extension</code> &mdash; расширение загруженого файла</li>
 </ul></li>
 </ul>
+<h3>Изменение изображения при загрузке</h3>
+<p>Вы можете изменять загружаемое изображение, добавив метод <code>setImage($field, $image)</code> в вашу модель:</p>
+<pre><code class="language-php">public function setImage($field, $image)
+{
+    parent::setImage($field, $image);
+    $file = $this-&gt;$field;
+    if ( ! $file-&gt;exists()) return;
+    $path = $file-&gt;getFullPath();
+
+    // вы можете использовать возможности пакета Intervention Image для изменения изображения
+    Image::make($path)-&gt;resize(10, 10)-&gt;save();
+}</code></pre>
 <h3>Использование поля с изображением</h3>
 <p>Доступ к полю вашей модели</p>
 <pre><code class="language-php">$monument-&gt;image</code></pre>
