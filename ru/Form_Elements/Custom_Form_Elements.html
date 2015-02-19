@@ -61,10 +61,10 @@
     // implement your form element code here
     if ($instance-&gt;exists)
     {
-        // creating form
+        // editing form
     } else
     {
-        // editing form
+        // creating form
     }
     return 'my element';
 })</code></pre>
@@ -84,10 +84,10 @@
 {
     if ($instance-&gt;exists)
     {
-        return 'You are creating new entity.';
+        return 'You are editing existing entity.';
     } else
     {
-        return 'You are editing existing entity.';
+        return 'You are creating new entity.';
     }
 })</code></pre>
 <p>Использование в конфигурации модели</p>
@@ -112,10 +112,10 @@ class MyItem implements FormItemInterface
         $instance = Admin::instance()-&gt;formBuilder-&gt;getModel();
         if ($instance-&gt;exists)
         {
-            return "You are creating new {$this-&gt;label}.";
+            return "You are editing existing {$this-&gt;label}.";
         } else
         {
-            return "You are editing existing {$this-&gt;label}.";
+            return "You are creating new {$this-&gt;label}.";
         }
     }
 
