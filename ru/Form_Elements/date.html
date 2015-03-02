@@ -56,6 +56,11 @@
                             <p>Создает поле выбора даты.</p>
 <pre><code class="language-php">FormItem::date('date', 'Date')</code></pre>
 <p><strong>Важно</strong>: у вас должно быть установлено расширение php <a href="http://php.net/manual/en/book.intl.php">intl</a> для использования данного столбца.</p>
+<p><strong>Важно 2</strong>: вы должны пометить поле как поле с датой в вашей модели:</p>
+<pre><code class="language-php">public function getDates()
+{
+    return array_merge(parent::getDates(), ['date_field_name']);
+}</code></pre>
 <p><img alt="" src="/img/date.png" /></p>
 <h3>Раскрытое состояние</h3>
 <p><img alt="" src="/img/date_opened.png" /></p>                        </article>
