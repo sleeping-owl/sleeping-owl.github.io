@@ -165,10 +165,10 @@
 <pre><code class="language-php">$display-&gt;reorderable(false);</code></pre>
 <h3>Simple Tree</h3>
 <p>You can use this type if your tree based on <code>parent_id</code> and <code>order</code> columns.</p>
-<p>You must provide column names:</p>
+<p>You must provide column names and root parent_id (default is <code>null</code>):</p>
 <pre><code class="language-php">$display-&gt;parentField('parent_id');
-$display-&gt;orderField('order');</code></pre>
-<p>Root elements must have <code>parent_id</code> = <code>null</code>.</p>
+$display-&gt;orderField('order');
+$display-&gt;rootParentId(0);</code></pre>
 <hr/>
 <p><a name="tabbed"></a></p>
 <h1>Tabbed Display</h1>
