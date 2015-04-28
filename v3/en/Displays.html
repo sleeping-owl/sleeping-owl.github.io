@@ -57,6 +57,7 @@
 <ul>
 <li><a href="#table">Table</a></li>
 <li><a href="#datatables">Datatables</a></li>
+<li><a href="#datatablesAsync">Datatables async</a></li>
 <li><a href="#tree">Tree</a></li>
 <li><a href="#tabbed">Tabbed</a></li>
 <li><a href="#custom">Custom</a></li>
@@ -125,6 +126,21 @@
 <pre><code class="language-php">$display-&gt;order([[0, 'desc']]);</code></pre>
 <p>You can use multiple order fields:</p>
 <pre><code class="language-php">$display-&gt;order([[0, 'desc'], [2, 'asc']]);</code></pre>
+<hr/>
+<p><a name="datatablesAsync"></a></p>
+<h1>Datatables Async Display</h1>
+<p>This display extends <a href="#datatables">datatables</a> display. You don't have to perform any additional configuration, your datatable will become asynchronous with this display.</p>
+<pre><code class="language-php">…-&gt;display(function ()
+{
+    $display = AdminDisplay::datatablesAsync();
+    // configure display
+    return $display;
+})</code></pre>
+<p>This display has some limitations:</p>
+<ul>
+<li>you can't sort by columns not from your table (you have to mark these column not orderable by yourself)</li>
+<li>you can't search by columns not from your table</li>
+</ul>
 <hr/>
 <p><a name="tree"></a></p>
 <h1>Tree Display</h1>
