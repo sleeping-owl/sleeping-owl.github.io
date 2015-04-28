@@ -149,6 +149,7 @@
 <li><a href="https://github.com/etrepat/baum">https://github.com/etrepat/baum</a></li>
 <li><a href="https://github.com/lazychaser/laravel-nestedset">https://github.com/lazychaser/laravel-nestedset</a></li>
 </ul>
+<p>And the simplest tree based on <code>parent_id</code> and <code>order</code> fields.</p>
 <p>If you have one of them installed and configured you can use tree display:</p>
 <pre><code class="language-php">…-&gt;display(function ()
 {
@@ -159,6 +160,15 @@
 <h3>Set Displayed Field</h3>
 <p>You must set model field to be displayed as title (<em>default is 'title'</em>).</p>
 <pre><code class="language-php">$display-&gt;value('myTitleField');</code></pre>
+<h3>Disable Tree Reorder</h3>
+<p>You can enable or disable tree reordering.</p>
+<pre><code class="language-php">$display-&gt;reorderable(false);</code></pre>
+<h3>Simple Tree</h3>
+<p>You can use this type if your tree based on <code>parent_id</code> and <code>order</code> columns.</p>
+<p>You must provide column names:</p>
+<pre><code class="language-php">$display-&gt;parentField('parent_id');
+$display-&gt;orderField('order');</code></pre>
+<p>Root elements must have <code>parent_id</code> = <code>null</code>.</p>
 <hr/>
 <p><a name="tabbed"></a></p>
 <h1>Tabbed Display</h1>
