@@ -4,7 +4,7 @@
 <!--[if IE 8]>          <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-		    <title>Displays &ndash; SleepingOwl Admin</title>
+		    <title>Вывод списком &ndash; SleepingOwl Admin</title>
 	    <meta charset="utf-8"/>
     <meta name="description" content="Administrative interface builder for Laravel" />
     <meta name="author" content="Sleeping Owl">
@@ -38,7 +38,7 @@
                     </div>
                     <div id="sub-nav-collapse" class="sub-nav-collapse">
                         <!-- Navigation -->
-                        <ul class="nav nav-list"><li><a href="../en/Introduction.html">Introduction</a></li><li><a href="#" class="aj-nav folder">Getting Started</a><ul class="nav nav-list"><li><a href="../en/Getting_Started/Installation.html">Installation</a></li><li><a href="../en/Getting_Started/Configuration.html">Configuration</a></li><li><a href="../en/Getting_Started/Menu_Configuration.html">Menu Configuration</a></li><li><a href="../en/Getting_Started/Model_Configuration.html">Model Configuration</a></li><li><a href="../en/Getting_Started/Routes_Configuration.html">Routes Configuration</a></li><li><a href="../en/Getting_Started/Authentication.html">Authentication</a></li><li><a href="../en/Getting_Started/Localization.html">Localization</a></li><li><a href="../en/Getting_Started/Validation.html">Validation</a></li></ul></li><li><a href="#" class="aj-nav folder">Commands</a><ul class="nav nav-list"><li><a href="../en/Commands/Install.html">Install</a></li><li><a href="../en/Commands/Model_Configuration_Generation.html">Model Configuration Generation</a></li><li><a href="../en/Commands/Administrators.html">Administrators</a></li></ul></li><li class="active"><a href="../en/Displays.html">Displays</a></li><li><a href="../en/Filters.html">Filters</a></li><li><a href="../en/Columns.html">Columns</a></li><li><a href="../en/Form.html">Form</a></li><li><a href="../en/License.html">License</a></li></ul>                                                    <div class="well well-sidebar">
+                        <ul class="nav nav-list"><li><a href="../ru/Introduction.html">Введение</a></li><li><a href="#" class="aj-nav folder">С чего начать</a><ul class="nav nav-list"><li><a href="../ru/Getting_Started/Installation.html">Установка</a></li><li><a href="../ru/Getting_Started/Configuration.html">Конфигурация</a></li><li><a href="../ru/Getting_Started/Menu_Configuration.html">Конфигурация меню</a></li><li><a href="../ru/Getting_Started/Model_Configuration.html">Конфигурация модели</a></li><li><a href="../ru/Getting_Started/Routes_Configuration.html">Конфигурация роутов</a></li><li><a href="../ru/Getting_Started/Authentication.html">Авторизация</a></li><li><a href="../ru/Getting_Started/Localization.html">Локализация</a></li><li><a href="../ru/Getting_Started/Validation.html">Валидация</a></li></ul></li><li><a href="#" class="aj-nav folder">Команды</a><ul class="nav nav-list"><li><a href="../ru/Commands/Install.html">Установка</a></li><li><a href="../ru/Commands/Model_Configuration_Generation.html">Генерация конфигурации модели</a></li><li><a href="../ru/Commands/Administrators.html">Администраторы</a></li></ul></li><li class="active"><a href="../ru/Displays.html">Вывод списком</a></li><li><a href="../ru/Filters.html">Фильтры</a></li><li><a href="../ru/Columns.html">Столбцы</a></li><li><a href="../ru/Form.html">Формы</a></li><li><a href="../ru/License.html">Лицензия</a></li></ul>                                                    <div class="well well-sidebar">
 
                                 <!-- Links -->
                                 <i class="fa fa-fw fa-github"></i> <a href="https://github.com/sleeping-owl/admin/tree/development" target="_blank">GitHub Repo</a><br><i class="fa fa-fw fa-desktop"></i> <a href="http://sleepingowladmindemo2.cloudcontrolled.com" target="_blank">Live Demo</a><br>                                
@@ -50,59 +50,59 @@
                     <div class="content-page">
                         <article>
                                                             <div class="page-header">
-                                    <h1>Displays                                                                            </h1>
+                                    <h1>Вывод списком                                                                            </h1>
                                 </div>
                             
-                            <p>Available display types:</p>
+                            <p>Доступные типы вывода:</p>
 <ul>
-<li><a href="#table">Table</a></li>
+<li><a href="#table">Таблица</a></li>
 <li><a href="#datatables">Datatables</a></li>
-<li><a href="#datatablesAsync">Datatables async</a></li>
-<li><a href="#tree">Tree</a></li>
-<li><a href="#tabbed">Tabbed</a></li>
-<li><a href="#custom">Custom</a></li>
+<li><a href="#datatablesAsync">Асинхронная Datatables</a></li>
+<li><a href="#tree">Дерево</a></li>
+<li><a href="#tabbed">Вывод табами</a></li>
+<li><a href="#custom">Произвольный</a></li>
 </ul>
 <p><a name="table"></a></p>
-<h1>Table Display</h1>
+<h1>Вывод таблицей</h1>
 <pre><code class="language-php">…-&gt;display(function ()
 {
     $display = AdminDisplay::table();
     // configure display
     return $display;
 })</code></pre>
-<h3>Set Columns</h3>
-<p>Provide columns to show in table. For details see <a href="Columns/Overview.html">columns</a>.</p>
+<h3>Указание столбцов</h3>
+<p>Укажите столбцы для отображения в таблице. Подробнее смотрите в разделе <a href="Columns/Overview.html">столбцы</a>.</p>
 <pre><code class="language-php">$display-&gt;columns([
     Column::string('title')-&gt;label('Title'),
     ...
 ]);</code></pre>
 <h3>Eager Loading</h3>
-<p>Set relations to be eager loaded.</p>
+<p>Укажите связи для eager load.</p>
 <pre><code class="language-php">$display-&gt;with('related', 'other_relation');</code></pre>
-<h3>Modify Query</h3>
-<p>You can modify query as you want:</p>
+<h3>Изменение запроса</h3>
+<p>Вы можете изменять запрос по желанию:</p>
 <pre><code class="language-php">$display-&gt;apply(function ($query)
 {
     $query-&gt;where('my_field', 2);
     $query-&gt;orderBy('date', 'desc');
 });</code></pre>
-<h3>Apply Scopes</h3>
-<p>You can apply eloquent scopes to this display:</p>
+<h3>Применение scope</h3>
+<p>Вы можете применить eloquent scope к выводимым данным:</p>
 <pre><code class="language-php">$display-&gt;scope('myScope');</code></pre>
-<h3>Set Filters</h3>
-<p>You can add filters to this display. Filters will be applyed based on query parameters. For details see <a href="Filters.html">filters</a>.</p>
+<h3>Указание фильтров</h3>
+<p>Вы можете добавить фильтры к отображению. Фильтры будут применены на основе параметров запроса. Подробнее смотрите в разделе <a href="Filters.html">фильтры</a>.</p>
 <pre><code class="language-php">$display-&gt;filters([
     Filter::scope('last')-&gt;title('Latest News'),
     ...
 ]);</code></pre>
-<h3>Set Parameters</h3>
-<p>This parameters will be added to create and edit urls and can be used as default values for form items.</p>
+<h3>Указание параметров</h3>
+<p>Эти параметры будут добавлены к ссылкам на добавление и редактирование. Эти параметры могут быть использованы в качестве значений по умолчанию для элементов формы.</p>
 <pre><code class="language-php">$display-&gt;parameters([
     'related_id' =&gt; 12,
     ...
 ]);</code></pre>
-<h3>Bulk Actions</h3>
-<p>You can add bulk actions:</p>
+<h3>Массовые действия</h3>
+<p>Вы можете добавить массовые действия:</p>
 <pre><code class="language-php">$display-&gt;actions([
     Column::action('export')-&gt;value('Export')-&gt;icon('fa-share')-&gt;target('_blank')-&gt;callback(function ($collection)
     {
@@ -110,77 +110,77 @@
     }),
     ...
 ]);</code></pre>
-<p>To use bulk actions you must add <code>Column::checkbox()</code> to your columns.</p>
+<p>Для использования массовых действий необходимо добавить <code>Column::checkbox()</code> в список столбцов.</p>
 <hr/>
 <p><a name="datatables"></a></p>
-<h1>Datatables Display</h1>
-<p>This display extends <a href="#table">table</a> display and you can use all table features.</p>
+<h1>Вывод Datatables</h1>
+<p>Это вид основан на <a href="#table">табличном</a> виде и вы можете использовать все возможности табличного вида.</p>
 <pre><code class="language-php">…-&gt;display(function ()
 {
     $display = AdminDisplay::datatables();
     // configure display
     return $display;
 })</code></pre>
-<h3>Set Order</h3>
-<p>You can specify default order for your table in datatables format (column index and order direction):</p>
+<h3>Указание сортировки</h3>
+<p>Вы можете указать сортировку по умолчанию для вашей таблицы в формате сортировки datatables (порядковый номер столбца и направление сортировки):</p>
 <pre><code class="language-php">$display-&gt;order([[0, 'desc']]);</code></pre>
-<p>You can use multiple order fields:</p>
+<p>Вы можете указать сортировку по нескольким столбцам:</p>
 <pre><code class="language-php">$display-&gt;order([[0, 'desc'], [2, 'asc']]);</code></pre>
 <hr/>
 <p><a name="datatablesAsync"></a></p>
-<h1>Datatables Async Display</h1>
-<p>This display extends <a href="#datatables">datatables</a> display. You don't have to perform any additional configuration, your datatable will become asynchronous with this display.</p>
+<h1>Асинхронный вывод Datatables</h1>
+<p>Этот вид основан на <a href="#datatables">datatables</a> виде. Вам не нужно производить каких-либо дополнительных конфигураций, ваша datatables таблица станет асинхронной с этим видом.</p>
 <pre><code class="language-php">…-&gt;display(function ()
 {
     $display = AdminDisplay::datatablesAsync();
     // configure display
     return $display;
 })</code></pre>
-<p>This display has some limitations:</p>
+<p>Этот вид имеет некоторые ограничения:</p>
 <ul>
-<li>you can't sort by columns not from your table (you have to mark these column not orderable by yourself)</li>
-<li>you can't search by columns not from your table</li>
+<li>вы не можете сортировать по столбцу не из вашей таблицы (вам необходимо пометить эти столбцы как несортируемые вручную)</li>
+<li>вы не можете фильтровать по столбцу не из вашей таблицы</li>
 </ul>
 <hr/>
 <p><a name="tree"></a></p>
-<h1>Tree Display</h1>
-<p>There are 2 nested-sets packages supported:</p>
+<h1>Вывод деревом</h1>
+<p>Поддерживается 2 nested-sets пакета:</p>
 <ul>
 <li><a href="https://github.com/etrepat/baum">https://github.com/etrepat/baum</a></li>
 <li><a href="https://github.com/lazychaser/laravel-nestedset">https://github.com/lazychaser/laravel-nestedset</a></li>
 </ul>
-<p>And the simplest tree based on <code>parent_id</code> and <code>order</code> fields.</p>
-<p>If you have one of them installed and configured you can use tree display:</p>
+<p>И простое дерево, основанное на полях <code>parent_id</code> и <code>order</code>.</p>
+<p>Если у вас установлен один из этих пакетов, вы можете использовать вывод деревом:</p>
 <pre><code class="language-php">…-&gt;display(function ()
 {
     $display = AdminDisplay::tree();
     // configure display
     return $display;
 })</code></pre>
-<h3>Set Displayed Field</h3>
-<p>You must set model field to be displayed as title (<em>default is 'title'</em>).</p>
+<h3>Указание отображаемого поля</h3>
+<p>Вы должны указать поле для вывода в качестве заголовка записи (<em>по умолчанию 'title'</em>).</p>
 <pre><code class="language-php">$display-&gt;value('myTitleField');</code></pre>
-<h3>Disable Tree Reorder</h3>
-<p>You can enable or disable tree reordering.</p>
+<h3>Отключение сортировки</h3>
+<p>Вы можете включить или выключить сортировку дерева.</p>
 <pre><code class="language-php">$display-&gt;reorderable(false);</code></pre>
-<h3>Simple Tree</h3>
-<p>You can use this type if your tree based on <code>parent_id</code> and <code>order</code> columns.</p>
-<p>You must provide column names and root parent_id (default is <code>null</code>):</p>
+<h3>Простое дерево</h3>
+<p>Вы можете использовать этот тип дерева, если у вас в таблице есть поля <code>parent_id</code> и <code>order</code>.</p>
+<p>Необходимо указать названия полей и значение корневого parent_id (по умолчанию <code>null</code>):</p>
 <pre><code class="language-php">$display-&gt;parentField('parent_id');
 $display-&gt;orderField('order');
 $display-&gt;rootParentId(0);</code></pre>
 <hr/>
 <p><a name="tabbed"></a></p>
-<h1>Tabbed Display</h1>
-<p>You can combine several displays with tabs.</p>
+<h1>Вывод табами</h1>
+<p>Вы можете объединить несколько типов выводов используя табы.</p>
 <pre><code class="language-php">…-&gt;display(function ()
 {
     $display = AdminDisplay::tabbed();
     // configure display
     return $display;
 })</code></pre>
-<h3>Set Tabs</h3>
-<p>You must set tabs to display:</p>
+<h3>Указание табов</h3>
+<p>Вы должны указать табы:</p>
 <pre><code class="language-php">$display-&gt;tabs(function ()
 {
     $tabs = [];
@@ -201,16 +201,16 @@ $display-&gt;rootParentId(0);</code></pre>
 });</code></pre>
 <hr/>
 <p><a name="custom"></a></p>
-<h1>Custom Display</h1>
-<p>You can use your own displays and render it as you want:</p>
+<h1>Произвольный вывод</h1>
+<p>Вы можете использовать свои собственные view и отображать их как угодно:</p>
 <pre><code class="language-php">…-&gt;display(function ()
 {
     $rows = App\News::all();
     $model = Admin::model('App\News');
     return view('custom_display', compact('rows', 'model'));
 })</code></pre>
-<p>Url for the creating form will be <code>$model-&gt;createUrl()</code>.</p>
-<p>Url for the editing form will be <code>$model-&gt;editUrl($id)</code>.</p>                        </article>
+<p>Url для формы создания можно получить через <code>$model-&gt;createUrl()</code>.</p>
+<p>Url для формы редактирования можно получить через <code>$model-&gt;editUrl($id)</code>.</p>                        </article>
                     </div>
                 </div>
             </div>
