@@ -80,6 +80,7 @@
 <li><a href="#images">images</a></li>
 <li><a href="#select">select</a></li>
 <li><a href="#multiselect">multiselect</a></li>
+<li><a href="#radio">radio</a></li>
 <li><a href="#textarea">textarea</a></li>
 <li><a href="#ckeditor">ckeditor</a></li>
 <li><a href="#custom">custom</a></li>
@@ -246,6 +247,21 @@ public function setPhotosAttribute($photos)
     $this-&gt;categories()-&gt;attach($categories);
 }</code></pre>
 <p><code>categories()</code> method creates <code>belongs-to-many</code> relation in this case.</p>
+<hr />
+<p><a name="radio"></a></p>
+<h1>Radio</h1>
+<p>Creates radio input.</p>
+<pre><code class="language-php">FormItem::radio('category_id', 'Category')</code></pre>
+<h4>Providing Data</h4>
+<p>With array:</p>
+<pre><code class="language-php">-&gt;options([1 =&gt; 'First', 2 =&gt; 'Second', 3 =&gt; 'Third])</code></pre>
+<p>With enum (use array values as keys):</p>
+<pre><code class="language-php">-&gt;enum(['First', 'Second', 'Third])</code></pre>
+<p>With model:</p>
+<pre><code class="language-php">-&gt;model('App\MyModel')-&gt;display('title')</code></pre>
+<h4>Nullable Field</h4>
+<p>You can mark radio element to be nullable:</p>
+<pre><code class="language-php">…-&gt;nullable()</code></pre>
 <hr />
 <p><a name="textarea"></a></p>
 <h1>Textarea</h1>
