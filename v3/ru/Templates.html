@@ -4,7 +4,7 @@
 <!--[if IE 8]>          <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-		    <title>Install &ndash; SleepingOwl Admin</title>
+		    <title>Шаблоны &ndash; SleepingOwl Admin</title>
 	    <meta charset="utf-8"/>
     <meta name="description" content="Administrative interface builder for Laravel" />
     <meta name="author" content="Sleeping Owl">
@@ -15,7 +15,7 @@
     <!-- Font -->
     <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
     <!-- CSS -->
-    <link href='../../themes/daux-blue/css/daux-blue.css' rel='stylesheet' type='text/css'><link href='../../themes/daux-blue/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <link href='../themes/daux-blue/css/daux-blue.css' rel='stylesheet' type='text/css'><link href='../themes/daux-blue/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
             <!-- Docs -->
@@ -38,7 +38,7 @@
                     </div>
                     <div id="sub-nav-collapse" class="sub-nav-collapse">
                         <!-- Navigation -->
-                        <ul class="nav nav-list"><li><a href="../../en/Introduction.html">Introduction</a></li><li><a href="#" class="aj-nav folder">Getting Started</a><ul class="nav nav-list"><li><a href="../../en/Getting_Started/Installation.html">Installation</a></li><li><a href="../../en/Getting_Started/Configuration.html">Configuration</a></li><li><a href="../../en/Getting_Started/Menu_Configuration.html">Menu Configuration</a></li><li><a href="../../en/Getting_Started/Model_Configuration.html">Model Configuration</a></li><li><a href="../../en/Getting_Started/Routes_Configuration.html">Routes Configuration</a></li><li><a href="../../en/Getting_Started/Authentication.html">Authentication</a></li><li><a href="../../en/Getting_Started/Localization.html">Localization</a></li><li><a href="../../en/Getting_Started/Validation.html">Validation</a></li></ul></li><li class="open"><a href="#" class="aj-nav folder">Commands</a><ul class="nav nav-list"><li class="active"><a href="../../en/Commands/Install.html">Install</a></li><li><a href="../../en/Commands/Model_Configuration_Generation.html">Model Configuration Generation</a></li><li><a href="../../en/Commands/Administrators.html">Administrators</a></li></ul></li><li><a href="../../en/Displays.html">Displays</a></li><li><a href="../../en/Filters.html">Filters</a></li><li><a href="../../en/Columns.html">Columns</a></li><li><a href="../../en/Form.html">Form</a></li><li><a href="../../en/Templates.html">Templates</a></li><li><a href="../../en/License.html">License</a></li></ul>                                                    <div class="well well-sidebar">
+                        <ul class="nav nav-list"><li><a href="../ru/Introduction.html">Введение</a></li><li><a href="#" class="aj-nav folder">С чего начать</a><ul class="nav nav-list"><li><a href="../ru/Getting_Started/Installation.html">Установка</a></li><li><a href="../ru/Getting_Started/Configuration.html">Конфигурация</a></li><li><a href="../ru/Getting_Started/Menu_Configuration.html">Конфигурация меню</a></li><li><a href="../ru/Getting_Started/Model_Configuration.html">Конфигурация модели</a></li><li><a href="../ru/Getting_Started/Routes_Configuration.html">Конфигурация роутов</a></li><li><a href="../ru/Getting_Started/Authentication.html">Авторизация</a></li><li><a href="../ru/Getting_Started/Localization.html">Локализация</a></li><li><a href="../ru/Getting_Started/Validation.html">Валидация</a></li></ul></li><li><a href="#" class="aj-nav folder">Команды</a><ul class="nav nav-list"><li><a href="../ru/Commands/Install.html">Установка</a></li><li><a href="../ru/Commands/Model_Configuration_Generation.html">Генерация конфигурации модели</a></li><li><a href="../ru/Commands/Administrators.html">Администраторы</a></li></ul></li><li><a href="../ru/Displays.html">Типы отображения данных</a></li><li><a href="../ru/Filters.html">Фильтры</a></li><li><a href="../ru/Columns.html">Столбцы</a></li><li><a href="../ru/Form.html">Формы</a></li><li class="active"><a href="../ru/Templates.html">Шаблоны</a></li><li><a href="../ru/License.html">Лицензия</a></li></ul>                                                    <div class="well well-sidebar">
 
                                 <!-- Links -->
                                 <i class="fa fa-fw fa-github"></i> <a href="https://github.com/sleeping-owl/admin/tree/development" target="_blank">GitHub Repo</a><br><i class="fa fa-fw fa-desktop"></i> <a href="http://sleepingowladmindemo2.cloudcontrolled.com" target="_blank">Live Demo</a><br>                                
@@ -50,27 +50,28 @@
                     <div class="content-page">
                         <article>
                                                             <div class="page-header">
-                                    <h1>Install                                                                            </h1>
+                                    <h1>Шаблоны                                                                            </h1>
                                 </div>
                             
-                            <p>Use this command to run initial configuration of SleepingOwl Admin. It creates all necessary files and directories.</p>
-<h3>Usage</h3>
-<pre><code class="language-bash">$ php artisan admin:install --title="My Admin Title"</code></pre>
-<h3>Options</h3>
-<h4>--title</h4>
-<p>Set title for your admin model. For details see <a href="../Getting_Started/Configuration.html">configuration</a>.</p>
-<h3>What It Does</h3>
-<ul>
-<li>Publish migration for <code>administrator</code> table, migrate database and seed by default administrator (<em>username: <code>admin</code>, password: <code>SleepingOwl</code></em>).</li>
-<li>Publish SleepingOwl Admin config and set title.</li>
-<li>Publish SleepingOwl Admin assets.</li>
-<li>Create bootstrap directory.</li>
-<li>Create initial menu configuration file.</li>
-<li>Create initial bootstrap file.</li>
-<li>Create initial routes file.</li>
-<li>Create dummy user file (<em>as example</em>).</li>
-<li>Create structure for public directory (<em>create <code>images/uploads</code> directories</em>).</li>
-</ul>                        </article>
+                            <p>Поддерживаемые шаблоны:</p>
+<table>
+<thead>
+<tr>
+<th>Шаблон</th>
+<th>Ссылка</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://startbootstrap.com/template-overviews/sb-admin-2/">sb-admin-2</a></td>
+<td>built-in</td>
+</tr>
+<tr>
+<td><a href="https://almsaeedstudio.com">adminLTE</a></td>
+<td><a href="https://github.com/sleeping-owl/admin-lte-template"><a href="https://github.com/sleeping-owl/admin-lte-template">https://github.com/sleeping-owl/admin-lte-template</a></a></td>
+</tr>
+</tbody>
+</table>                        </article>
                     </div>
                 </div>
             </div>
@@ -82,17 +83,17 @@
             <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script>
             if (typeof jQuery == 'undefined')
-                document.write(unescape("%3Cscript src='../../js/jquery-1.11.0.min.js' type='text/javascript'%3E%3C/script%3E"));
+                document.write(unescape("%3Cscript src='../js/jquery-1.11.0.min.js' type='text/javascript'%3E%3C/script%3E"));
         </script>
     
     <!-- hightlight.js -->
-    <script src="../../js/highlight.min.js"></script>
+    <script src="../js/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
     <!-- JS -->
     
     <!-- Front end file editor -->
-        <script src="../../js/custom.js"></script>
+        <script src="../js/custom.js"></script>
     <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
