@@ -126,6 +126,17 @@
 <pre><code class="language-php">$display-&gt;order([[0, 'desc']]);</code></pre>
 <p>You can use multiple order fields:</p>
 <pre><code class="language-php">$display-&gt;order([[0, 'desc'], [2, 'asc']]);</code></pre>
+<h3>Datatables Attributes</h3>
+<p>You can set datatables attributes:</p>
+<pre><code class="language-php">$display-&gt;attributes([
+    'ordering' =&gt; false,
+    'stateSave' =&gt; true,
+]);</code></pre>
+<p>Supported attributes:</p>
+<ul>
+<li><code>ordering</code> &mdash; boolean, is ordering feature is enabled (default is true)</li>
+<li><code>stateSave</code> &mdash; boolean, is state save feature is enabled (default is true)</li>
+</ul>
 <hr/>
 <p><a name="datatablesAsync"></a></p>
 <h1>Datatables Async Display</h1>

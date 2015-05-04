@@ -126,6 +126,17 @@
 <pre><code class="language-php">$display-&gt;order([[0, 'desc']]);</code></pre>
 <p>Вы можете указать сортировку по нескольким столбцам:</p>
 <pre><code class="language-php">$display-&gt;order([[0, 'desc'], [2, 'asc']]);</code></pre>
+<h3>Атрибуты datatables</h3>
+<p>Вы можете указать атрибуты datatables:</p>
+<pre><code class="language-php">$display-&gt;attributes([
+    'ordering' =&gt; false,
+    'stateSave' =&gt; true,
+]);</code></pre>
+<p>Поддерживаемые атрибуты:</p>
+<ul>
+<li><code>ordering</code> &mdash; boolean, включена ли функция сортировки (по умолчанию: true)</li>
+<li><code>stateSave</code> &mdash; boolean, включена ли функция сохранения состояния (по умолчанию: true)</li>
+</ul>
 <hr/>
 <p><a name="datatablesAsync"></a></p>
 <h1>Асинхронный вывод Datatables</h1>
