@@ -86,38 +86,7 @@ Admin::menu()-&gt;label('Subitems')-&gt;icon('fa-book')-&gt;items(function ()
 {
     // ...
 })</code></pre>
-<p>Вы можете создавать подменю, без ограничения глубины вложенности.</p>
-<p>SleepingOwl Admin menu configuration default placement is in <code>app/admin/menu.php</code>.</p>
-<p>Here is simple example how your menu configuration might look like:</p>
-<pre><code>Admin::menu()-&gt;url('/')-&gt;label('Start Page')-&gt;icon('fa-dashboard');
-Admin::menu('App\User')-&gt;icon('fa-user');
-Admin::menu()-&gt;label('Subitems')-&gt;icon('fa-book')-&gt;items(function ()
-{
-    Admin::menu(\Acme\Models\Bar\User::class)-&gt;icon('fa-user');
-    Admin::menu(\Acme\Models\Foo::class)-&gt;label('my label');
-    Admin::menu()-&gt;url('about')-&gt;label('About');
-});</code></pre>
-<h3>Create Menu Item for Model</h3>
-<pre><code class="language-php">Admin::menu(\App\MyModel::class)</code></pre>
-<p>If you are running PHP under 5.5 you can use strings:</p>
-<pre><code class="language-php">Admin::menu('App\MyModel')</code></pre>
-<p>Model must be registered in SleepingOwl Admin. For details see <a href="Model_Configuration.html">model configuration</a>.</p>
-<p>Label for this menu item will be model title, but you can provide custom label using <code>label()</code> method.</p>
-<p>Url for this item will be generated automatically and will be a link to the model.</p>
-<h3>Create Menu Item with Custom Url</h3>
-<pre><code class="language-php">Admin::menu()-&gt;url('my-url')-&gt;label('My Label')</code></pre>
-<p>Url must be registered in admin routes. For details see <a href="Routes_Configuration.html">admin routes configuration</a>.</p>
-<h3>Set Label</h3>
-<pre><code class="language-php">-&gt;label('My Label')</code></pre>
-<h3>Set Icon</h3>
-<pre><code class="language-php">-&gt;icon('fa-bank')</code></pre>
-<p>You can use <a href="http://fortawesome.github.io/Font-Awesome/icons/">Font Awesome 4.1.0</a> icon classes.</p>
-<h3>Nested Menus</h3>
-<pre><code class="language-php">-&gt;items(function()
-{
-    // ...
-})</code></pre>
-<p>You can create submenus. There is no depth limit.</p>                        </article>
+<p>Вы можете создавать подменю, без ограничения глубины вложенности.</p>                        </article>
                     </div>
                 </div>
             </div>
