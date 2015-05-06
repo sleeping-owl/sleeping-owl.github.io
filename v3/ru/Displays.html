@@ -38,7 +38,7 @@
                     </div>
                     <div id="sub-nav-collapse" class="sub-nav-collapse">
                         <!-- Navigation -->
-                        <ul class="nav nav-list"><li><a href="../ru/Introduction.html">Введение</a></li><li><a href="#" class="aj-nav folder">С чего начать</a><ul class="nav nav-list"><li><a href="../ru/Getting_Started/Installation.html">Установка</a></li><li><a href="../ru/Getting_Started/Configuration.html">Конфигурация</a></li><li><a href="../ru/Getting_Started/Menu_Configuration.html">Конфигурация меню</a></li><li><a href="../ru/Getting_Started/Model_Configuration.html">Конфигурация модели</a></li><li><a href="../ru/Getting_Started/Routes_Configuration.html">Конфигурация роутов</a></li><li><a href="../ru/Getting_Started/Authentication.html">Авторизация</a></li><li><a href="../ru/Getting_Started/Localization.html">Локализация</a></li><li><a href="../ru/Getting_Started/Validation.html">Валидация</a></li></ul></li><li><a href="#" class="aj-nav folder">Команды</a><ul class="nav nav-list"><li><a href="../ru/Commands/Install.html">Установка</a></li><li><a href="../ru/Commands/Model_Configuration_Generation.html">Генерация конфигурации модели</a></li><li><a href="../ru/Commands/Administrators.html">Администраторы</a></li></ul></li><li class="active"><a href="../ru/Displays.html">Типы отображения данных</a></li><li><a href="../ru/Filters.html">Фильтры</a></li><li><a href="../ru/Columns.html">Столбцы</a></li><li><a href="../ru/Form.html">Формы</a></li><li><a href="../ru/Templates.html">Шаблоны</a></li><li><a href="../ru/License.html">Лицензия</a></li></ul>                                                    <div class="well well-sidebar">
+                        <ul class="nav nav-list"><li><a href="../ru/Introduction.html">Введение</a></li><li><a href="#" class="aj-nav folder">С чего начать</a><ul class="nav nav-list"><li><a href="../ru/Getting_Started/Installation.html">Установка</a></li><li><a href="../ru/Getting_Started/Configuration.html">Конфигурация</a></li><li><a href="../ru/Getting_Started/Menu_Configuration.html">Конфигурация меню</a></li><li><a href="../ru/Getting_Started/Model_Configuration.html">Конфигурация модели</a></li><li><a href="../ru/Getting_Started/Routes_Configuration.html">Конфигурация роутов</a></li><li><a href="../ru/Getting_Started/Authentication.html">Авторизация</a></li><li><a href="../ru/Getting_Started/Localization.html">Локализация</a></li><li><a href="../ru/Getting_Started/Validation.html">Валидация</a></li></ul></li><li><a href="#" class="aj-nav folder">Команды</a><ul class="nav nav-list"><li><a href="../ru/Commands/Install.html">Установка</a></li><li><a href="../ru/Commands/Model_Configuration_Generation.html">Генерация конфигурации модели</a></li><li><a href="../ru/Commands/Administrators.html">Администраторы</a></li></ul></li><li class="active"><a href="../ru/Displays.html">Типы отображения данных</a></li><li><a href="../ru/Filters.html">Фильтры</a></li><li><a href="../ru/Columns.html">Столбцы</a></li><li><a href="../ru/ColumnFilters.html">Фильтры столбцов</a></li><li><a href="../ru/Form.html">Формы</a></li><li><a href="../ru/Templates.html">Шаблоны</a></li><li><a href="../ru/License.html">Лицензия</a></li></ul>                                                    <div class="well well-sidebar">
 
                                 <!-- Links -->
                                 <i class="fa fa-fw fa-github"></i> <a href="https://github.com/sleeping-owl/admin/tree/development" target="_blank">GitHub Repo</a><br><i class="fa fa-fw fa-desktop"></i> <a href="http://sleepingowladmindemo2.cloudcontrolled.com" target="_blank">Live Demo</a><br>                                
@@ -71,11 +71,17 @@
     return $display;
 })</code></pre>
 <h3>Указание столбцов</h3>
-<p>Укажите столбцы для отображения в таблице. Подробнее смотрите в разделе <a href="Columns/Overview.html">столбцы</a>.</p>
+<p>Укажите столбцы для отображения в таблице. Подробнее смотрите в разделе <a href="Columns.html">столбцы</a>.</p>
 <pre><code class="language-php">$display-&gt;columns([
     Column::string('title')-&gt;label('Title'),
     ...
 ]);</code></pre>
+<h3>Фильтры столбцов</h3>
+<p>Вы можете указать фильтр для каждого столбца. Подробнее смотрите в разделе <a href="ColumnFilters.html">фильтры столбцов</a>.</p>
+<pre><code class="language-php">$display-&gt;columnFilters([
+    null, // у первого столбца нет фильтра
+    ColumnFilter::text()-&gt;placeholder('Title'), // у второго столбца тектовый фильтр
+])</code></pre>
 <h3>Eager Loading</h3>
 <p>Укажите связи для eager load.</p>
 <pre><code class="language-php">$display-&gt;with('related', 'other_relation');</code></pre>
