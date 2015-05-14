@@ -76,12 +76,12 @@
 <p>Creates filter by <code>title</code> field. It ignores query parameter value and overrides it with <code>'TODO category'</code>.</p>
 <p><strong>Important:</strong> query parameter must have value. You can`t access this filter using <code>categories?title</code>, but <code>categories?title=1</code> or <code>categories?title=something_else</code> will work.</p>
 <hr/>
-<p><a name="#related"></a></p>
+<p><a name="related"></a></p>
 <h1>Filter by Related Model</h1>
 <p>You must provide field to be filtered by (<em>related_id in the example</em>), related model class (<em>App\Related</em>) and related model field to be displayed as filter title (<em>firstName</em>). Filter value will be extracted from query parameters.</p>
 <pre><code class="language-php">Filter::related('related_id')-&gt;model('App\Related')-&gt;display('firstName')</code></pre>
 <hr/>
-<p><a name="#field"></a></p>
+<p><a name="field"></a></p>
 <h1>Filter by Field</h1>
 <p>You can create filter by field. This code will filter your models by parameter from query.</p>
 <pre><code class="language-php">Filter::field('published')</code></pre>

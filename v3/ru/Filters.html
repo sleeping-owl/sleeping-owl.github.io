@@ -76,12 +76,12 @@
 <p>Создает фильтр по полю <code>title</code>. Он игнорирует параметр запроса и переопределяет его значением <code>'TODO category'</code>.</p>
 <p><strong>Важно:</strong> параметр запроса должнен иметь значение. Вы не можете применить фильтр используя <code>categories?title</code>, но <code>categories?title=1</code> или <code>categories?title=something_else</code> будут работать.</p>
 <hr/>
-<p><a name="#related"></a></p>
+<p><a name="related"></a></p>
 <h1>Фильтр по связанной модели</h1>
 <p>Необходимо указать поле для сортировки (<em>related_id в примере</em>), связанную модель (<em>App\Related</em>) и поле связанной модели для отображения в качестве заголовока фильтра (<em>firstName</em>). Значение фильтра будет извлечено из параметров запроса.</p>
 <pre><code class="language-php">Filter::related('related_id')-&gt;model('App\Related')-&gt;display('firstName')</code></pre>
 <hr/>
-<p><a name="#field"></a></p>
+<p><a name="field"></a></p>
 <h1>Фильтр по полю</h1>
 <p>Следующий код будет фильтровать данные по параметру из запроса.</p>
 <pre><code class="language-php">Filter::field('published')</code></pre>
