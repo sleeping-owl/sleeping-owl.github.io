@@ -199,7 +199,7 @@ Column::action('show')-&gt;label('Label')-&gt;icon('fa-globe')-&gt;style('long')
 <p><strong>Важно:</strong> стиль по умолчанию &mdash; <code>long</code> без иконки.</p>
 <h3>Target кнопки</h3>
 <p>Вы можете указать target для кнопки:</p>
-<pre><code class="language-php">Column::action('show')-&gt;label('Label')-&gt;url('http://test.com/:id')-&gt;target('_blank')</code></pre>
+<pre><code class="language-php">Column::action('show')-&gt;label('Column Label')-&gt;value('Button Text')-&gt;url('http://test.com/:id')-&gt;target('_blank')</code></pre>
 <h3>URL кнопки</h3>
 <p>Вы можете указать url для кнопки, <code>:id</code> будет заменен на id строки, в которой расположена кнопка:</p>
 <pre><code class="language-php">Column::action('show')-&gt;label('Label')-&gt;url('http://test.com/:id')</code></pre>

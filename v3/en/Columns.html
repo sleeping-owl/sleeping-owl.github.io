@@ -199,7 +199,7 @@ Column::action('show')-&gt;label('Label')-&gt;icon('fa-globe')-&gt;style('long')
 <p><strong>Defaults:</strong> default style is <code>long</code> without icon.</p>
 <h3>Button Target</h3>
 <p>You can specify target for button:</p>
-<pre><code class="language-php">Column::action('show')-&gt;label('Label')-&gt;url('http://test.com/:id')-&gt;target('_blank')</code></pre>
+<pre><code class="language-php">Column::action('show')-&gt;label('Column Label')-&gt;value('Button Text')-&gt;url('http://test.com/:id')-&gt;target('_blank')</code></pre>
 <h3>URL Usage</h3>
 <p>You can specify url for button, <code>:id</code> will be replaced with the clicked row id:</p>
 <pre><code class="language-php">Column::action('show')-&gt;label('Label')-&gt;url('http://test.com/:id')</code></pre>
